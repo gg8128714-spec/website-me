@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Modern Portfolio</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0f23 0%, #1e1e2e 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 35, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 10;
+            padding: 1rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #a855f7; }
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+        #hero {
+            background: url('https://via.placeholder.com/1920x1080/1e1e2e/ffffff?text=Abstract+Background') no-repeat center/cover;
+            position: relative;
+        }
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #a855f7;
+            box-shadow: 0 0 20px #a855f7;
+            margin-bottom: 1rem;
+        }
+        h1 { font-size: 3rem; margin: 0; color: #a855f7; }
+        h2 { font-size: 2rem; margin: 1rem 0; }
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #a855f7, #3b82f6);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s;
+        }
+        .cta-button:hover { transform: scale(1.1); }
+        .card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 600px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .skill {
+            background: #3a3a5c;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        .skill:hover { background: #a855f7; }
+        .projects {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding: 1rem;
+        }
+        .project {
+            min-width: 300px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 1rem;
+            text-align: left;
+        }
+        .project img { width: 100%; border-radius: 8px; }
+        form input, form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.2);
+            color: #ffffff;
+        }
+        form button {
+            background: #a855f7;
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .projects { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+<section id="hero">
+    <div class="hero-content">
+        <img src="profile.jpg" alt="Your Profile Photo" class="profile-pic">
+        <h1>Geraldine</h1>
+        <p>Creative Designer & Developer</p>
+        <a href="#projects" class="cta-button">View My Work</a>
+    </div>
+</section>
+
+<section id="about">
+    <div class="card">
+        <h2>About Me</h2>
+        <p> Hi, I'm Geraldine I’m a web designer who creates clean, functional, and visually engaging websites. I focus on user-centered design, strong layouts, and details that make digital experiences intuitive and memorable. My goal is to help brands communicate clearly and look great online.
+ I enjoy continuous learning in web design and user experience and I am passionate about front-end technologies and design systems.</p>
+    </div>
+</section>
+
+<section id="skills">
+    <div class="card">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill">Figma</div>
+            <div class="skill">Photoshop</div>
+            <div class="skill">Website Optimization & Performance</div>
+            <div class="skill">Visual & Layout Design</div>
+            <div class="skill">Responsive Web Design</div>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="card">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <img src="partership.jpg" alt="Project 1">
+                <h3>PARTNER SHIP PROJECT</h3>
+                <p>Brief Brief description:
+This project focuses on building a collaborative partnership to design, develop, and deliver a shared initiative that creates mutual value. 
+Through coordinated planning, resource sharing, and clear communication, the partnership aims to achieve sustainable outcomes, expand impact, and support long-term growth for all parties involved.</p>
+                <a href="#" class="cta-button">View Project</a>
+            </div>
+            <div class="project">
+                <img src="Group 3.png" alt="Project 2">
+                <h3>Introduction</h3>
+                <p>This project involves designing and developing a visually appealing, user-friendly website that effectively represents the brand and meets user needs. 
+The focus is on responsive design, intuitive navigation, and optimized performance to ensure a seamless experience across all devices.</p>
+                <a href="#" class="cta-button">View Project</a>
+            </div>
+            <!-- Add more projects as needed -->
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="card">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Geraldine" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<script>
+    // Simple smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
+
+        
+
+
